@@ -21,7 +21,7 @@ function *sendMessage(phone) {
       form: {
         mobile: phone,
         apikey: 'cd9f8e6871bcc421ac689cc4d8352b5b',
-        text: '【BemCloud】您的验证码是1。1111'
+        text: '【BemCloud】您的验证码是起床~~'
       }
     });
     return res
@@ -42,7 +42,7 @@ co(function*() {
 
   if(data.rc == 1){
       console.log('发')
-      let phone = 18611515379
+      let phone = 13041117850
       let res = yield sendMessage(phone)
       console.log(res)
 

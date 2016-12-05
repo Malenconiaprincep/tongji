@@ -44,10 +44,11 @@ co(function*() {
   if(data.rc == 1){
       console.log('发')
       let phone1 = 13041117850
-      let res = yield sendMessage(phone1)
-      console.log(res)
+      let res1 = yield sendMessage(phone1)
+      console.log(res1)
       let phone2 = 18611515379
-      let res = yield sendMessage(phone2)
+      let res2 = yield sendMessage(phone2)
+      console.log(res2)
 
   }
 });

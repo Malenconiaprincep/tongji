@@ -20,7 +20,7 @@ function *sendMessage(phone) {
       method: 'POST',
       form: {
         mobile: phone,
-        apikey: '8cb31f1ae7855316f127d11cd3609a8e',
+        apikey: 'cd9f8e6871bcc421ac689cc4d8352b5b',
         text: '可以挂号了 老婆婆~~~~'
       }
     });

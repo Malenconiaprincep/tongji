@@ -21,7 +21,7 @@ function *sendMessage(phone) {
       form: {
         mobile: phone,
         apikey: 'cd9f8e6871bcc421ac689cc4d8352b5b',
-        text: '可以挂号了 老婆婆~~~~'
+        text: '【BemCloud】您的验证码是1。如非本人操作，请忽略本短信'
       }
     });
     return res

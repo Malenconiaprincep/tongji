@@ -2,36 +2,49 @@ var koa = require('koa');
 var request = require('request')
 var thunkify = require('thunkify')
 var co = require('co')
-let BemEmail = require('bem-email');
 
 var formData = {
   // Pass a simple key-value pair
   hospital_id: '93cada65-18d9-42ad-9155-82a2cc8cb1b0',
   // Pass data via Buffers
-  scheduleId: 285596,
+  // scheduleId: 285596,
+  scheduleId: 285428,
+
+  
   // Pass data via Streams
 };
-// let emailVerifyUrl = '279495889@qq.com'
-// let emailAddress = '279495889@qq.com'
-// let email = new BemEmail({
-//   AccountName: 'service@notice.bemcloud.com',
-//   AccessKeySecret: 'LDAxHNXsvIrhe6u8gZdrLhg3Z74Htq',
-//   AccessKeyId: '8M00ud3AlevC2dJp'
-// });
-// let textbody = '验证邮箱: ' + emailVerifyUrl;
-// console.log(textbody);
-// let result = yield email.sendMail({
-//   ToAddress: emailAddress,
-//   Subject: 'test from aliyun',
-//   TextBody: textbody
-// });
+
+function *sendMessage(phone) {
+    let res = yield thunkify(request)({
+      url: 'http://yunpian.com/v1/sms/send.json',
+      method: 'POST',
+      form: {
+        mobile: phone,
+        apikey: '8cb31f1ae7855316f127d11cd3609a8e',
+        text: '可以挂号了 老婆婆~~~~'
+      }
+    });
+    return res
+}
 
 
 co(function*() {
-  yield thunkify(request.post)({url:'http://weixin.znhospital.com:9060/wx_zn/gh!obtainSchedulePartTime.html', formData: formData})(function optionalCallback(err, httpResponse, body) {
-	  if (err) {
-	    return console.error('upload failed:', err);
-	  }
-	  console.log(body);
-	});
+  let res = yield thunkify(request)({
+          url:'http://weixin.znhospital.com:9060/wx_zn/gh!obtainSchedulePartTime.html', 
+          method: 'POST',
+          formData: formData
+      });
+  res = res[0]
+  let data = JSON.parse(res.body)
+  if(data.rc == -1){
+      console.log('不发')
+  }
+
+  if(data.rc == 1){
+      console.log('发')
+      let phone = 18611515379
+      let res = yield sendMessage(phone)
+      console.log(res)
+
+  }
 });

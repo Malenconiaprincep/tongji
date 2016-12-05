@@ -21,7 +21,7 @@ function *sendMessage(phone) {
       form: {
         mobile: phone,
         apikey: 'cd9f8e6871bcc421ac689cc4d8352b5b',
-        text: '【BemCloud】您的验证码是起床'
+        text: '【BemCloud】您的验证码是8888'
       }
     });
     return res

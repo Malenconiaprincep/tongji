@@ -7,10 +7,11 @@ var formData = {
   // Pass a simple key-value pair
   hospital_id: '93cada65-18d9-42ad-9155-82a2cc8cb1b0',
   // Pass data via Buffers
-  scheduleId: 285596,
+  scheduleId: '285596',
   // scheduleId: 285428,
+  doctor_no: '000162',
+  dept_code: '0062'
 
-  
   // Pass data via Streams
 };
 
@@ -30,25 +31,39 @@ function *sendMessage(phone) {
 
 co(function*() {
   let res = yield thunkify(request)({
-          url:'http://weixin.znhospital.com:9060/wx_zn/gh!obtainSchedulePartTime.html', 
+          // url:'http://weixin.znhospital.com:9060/wx_zn/gh!obtainSchedulePartTime.html',
+          url: 'http://weixin.znhospital.com:9060/wx_zn/gh!doctorSchedule.html',
           method: 'POST',
-          formData: formData
+          form: formData
       });
   res = res[0]
   let data = JSON.parse(res.body)
-  console.log(data.rc)
-  if(data.rc == -1){
-      console.log('不发')
-  }
 
-  if(data.rc == 1){
-      console.log('发')
-      let phone1 = 13041117850
-      let res1 = yield sendMessage(phone1)
-      console.log(res1)
-      let phone2 = 18611515379
-      let res2 = yield sendMessage(phone2)
-      console.log(res2)
+  let filterData = data.filter(function(item){
+      return item.outpdate == '2017-01-10'
+  })
 
+  if(filterData.length > 0) {
+    console.log('发')
+    let phone1 = 13041117850
+    let res1 = yield sendMessage(phone1)
+    console.log(res1)
+    let phone2 = 18611515379
+    yield sendMessage(phone2)
   }
+  // console.log(data.rc)
+  // if(data.rc == -1){
+  //     console.log('不发')
+  // }
+  //
+  // if(data.rc == 1){
+  //     console.log('发')
+  //     let phone1 = 13041117850
+  //     let res1 = yield sendMessage(phone1)
+  //     console.log(res1)
+  //     let phone2 = 18611515379
+  //     let res2 = yield sendMessage(phone2)
+  //     console.log(res2)
+  //
+  // }
 });

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bem-redis": "^1.0.0",
     "co": "^4.6.0",
     "koa": "^1.2.4",
     "request": "^2.79.0",

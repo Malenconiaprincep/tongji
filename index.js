@@ -40,7 +40,7 @@ co(function*() {
   var data = JSON.parse(res.body)
 
   var filterData = data.filter(function(item){
-      return item.outpdate == '2017-01-17'
+      return item.outpdate == '2017-01-24'
   })
 
   if(filterData.length === 0){

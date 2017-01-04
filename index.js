@@ -62,20 +62,19 @@ co(function*() {
 
   if(data.rc == 1){
       var key = 'guahao' + filterData[0].scheduleid
-      limitRedis.get(key, function(err, reply){
-        count = reply
-        if (count > 5) {
-            process.exit()
-        }
+      var reply = yield thunkify(limitRedis.get).call(limitRedis, key);
+      count = reply
+      if (count > 5) {
+          process.exit()
+      }
 
-        let phone1 = 13041117850
-        let res1 = yield sendMessage(phone1)
-        let phone2 = 18611515379
-        let res2 = yield sendMessage(phone2)
+      let phone1 = 13041117850
+      let res1 = yield sendMessage(phone1)
+      let phone2 = 18611515379
+      let res2 = yield sendMessage(phone2)
 
-        limitRedis.set(key, ++count)
-        process.exit()
-      })
+      limitRedis.set(key, ++count)
+      process.exit()
   }else{
     process.exit()
   }

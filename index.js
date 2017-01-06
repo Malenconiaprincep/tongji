@@ -42,9 +42,10 @@ co(function*() {
   var filterData = data.filter(function(item){
       return item.outpdate == '2017-01-24'
   })
-
+  
   if(filterData.length === 0){
-    return false
+    console.log('目前没有符合之类排期')
+    process.exit()
   }
 
   var res = yield thunkify(request)({
@@ -56,6 +57,7 @@ co(function*() {
       });
   res = res[0]
   var data = JSON.parse(res.body)
+  console.log(res)
   if(data.rc == -1){
       console.log('不发')
   }

@@ -42,7 +42,6 @@ co(function*() {
     process.exit()
   }
 
-  console.log(filterData)
   if(filterData[0].status === '4'){
       var key = 'guahao' + filterData[0].shiftCaseId
       var reply = yield thunkify(limitRedis.get).call(limitRedis, key);

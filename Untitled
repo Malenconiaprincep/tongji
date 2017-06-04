@@ -1,0 +1,28 @@
+http://app.tjh.com.cn/?hmServer=http://app.tjh.com.cn#/m/yuyue?step=doctor-shift&hospitalId=60cd2663-d69d-4f63-bc17-8618d6e5e609&deptId=bcca9675-f1f9-44e7-a8a9-ebd1b3bfebe3&doctorId=5a14f101-19c0-496f-8e99-4a5752e154db&from=yuyue
+
+
+http://app.tjh.com.cn/?hmServer=http://app.tjh.com.cn#/m/yuyue?step=order-confirm&hospitalId=60cd2663-d69d-4f63-bc17-8618d6e5e609&deptId=5a14f101-19c0-496f-8e99-4a5752e154db&doctorId=bcca9675-f1f9-44e7-a8a9-ebd1b3bfebe3&from=yuyue
+
+
+reserve
+
+shiftCaseId , hospitalId ,
+
+http://app.tjh.com.cn/my/order/reserve/937e029d-c4e2-4e44-b9f0-4b5d17803a5f?hospitalId=60cd2663-d69d-4f63-bc17-8618d6e5e609&patientId=19252891
+
+
+hospitalId, expertId,
+
+http://app.tjh.com.cn/#/m/yuyue?step=order-confirm&hospitalId=60cd2663-d69d-4f63-bc17-8618d6e5e609&deptId=f9840d85-2875-4b02-b40c-ec00c4acf437&doctorId=8520ad4e-5dd4-4ed2-862e-608cba4ddf1d&from=yuyue
+
+
+
+
+http://app.tjh.com.cn/#/m/yuyue?step=order-confirm&hospitalId=60cd2663-d69d-4f63-bc17-8618d6e5e609&deptId=b1bf92b5-aebe-4edd-8a46-ed7874a6928d&doctorId=8520ad4e-5dd4-4ed2-862e-608cba4ddf1d&from=yuyue
+
+
+
+http://app.tjh.com.cn/#/m/yuyue?step=order-confirm&hospitalId=60cd2663-d69d-4f63-bc17-8618d6e5e609&deptId=b1bf92b5-aebe-4edd-8a46-ed7874a6928d&doctorId=8520ad4e-5dd4-4ed2-862e-608cba4ddf1d&from=yuyue
+
+
+http://app.tjh.com.cn/#/m/yuyue?step=order-confirm&hospitalId=60cd2663-d69d-4f63-bc17-8618d6e5e609&deptId=b1bf92b5-aebe-4edd-8a46-ed7874a6928d&doctorId=8520ad4e-5dd4-4ed2-862e-608cba4ddf1d&from=yuyue

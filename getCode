@@ -1,0 +1,44 @@
+getCode
+
+19363296
+
+auth
+
+4XNWrMewJjwmfRsPTGMDStql/L92SyOhIvvRvaht2yumemaNQ3KsZJeYiPcoxNjO14BJNRaIZCRMEset2T/5z2HQElBdZGcL2O0rRR9nGOOcnrs7xVdE6UQC5874iFR6
+
+
+60cd2663-d69d-4f63-bc17-8618d6e5e609   _1ff80e55-3ea4-4938-844d-8c831a5e3102
+
+
+// code2
+
+//http://appservice.tjh.com.cn//common/checkcode/getimagecode?imageCodeId=18bda312-c739-473f-87e0-2f09adf514ed&time=1492940392764
+
+http://appservice.tjh.com.cn//common/checkcode/getimagecode?imageCodeId=0e9249b7-f9e9-4ff1-88a0-04218e241c3a&time=1494163557734
+
+4XNWrMewJjwmfRsPTGMDStql/L92SyOhIvvRvaht2yumemaNQ3KsZJeYiPcoxNjO14BJNRaIZCRMEset2T/5z2HQElBdZGcL2O0rRR9nGONB2rfJ74+vnOXB/qzooYT2
+
+
+
+// submit
+
+http://app.tjh.com.cn/my/submitorder/dosubmit
+
+hospDeptId : doctorId
+experId : deptId
+
+
+{"patient":{"id":"19363296"},"hospDeptId":"ef8ab95b-b23b-4ca6-a906-74c203a1ab7f","expertId":"d2559804-accf-4dd4-b388-82b8cb7204b4","checkCode":"732727","shiftCaseId":"1ff80e55-3ea4-4938-844d-8c831a5e3102","timeSectionId":"88dce1cb-bb95-47da-92b9-203d7e9e314a","timeSection":"-","requiredDatas":[{"name":"cardType"},{"name":"cardValue","value":null}],"signData":"6e3aa6f9b8550133fff6ea0212dd0339"}
+
+// getSalt
+
+http://app.tjh.com.cn/security/getsalt?t=1492942257572
+
+md5
+
+TJ_RES_CODE_MOBILE8e60e6fe-f6ea-4878-b18c-82f0d3ca8d60YyKMGdO3IkQ=
+
+md5("TJ_RES_CODE_MOBILE" + e.moduleData.shift.shiftCaseId + t.data)
+
+
+http://app.tjh.com.cn/my/order/reserve/03d04841-c5a0-4aed-acf1-636bd66a4e31?hospitalId=60cd2663-d69d-4f63-bc17-8618d6e5e609&patientId=19358836
